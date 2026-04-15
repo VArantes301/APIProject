@@ -66,6 +66,18 @@ const completeTask = async (req, res, id) => {
 };
 
 
+const buscarTask = async (req, res, id) => {
+    const task = taskService.buscarTask(id);
+
+    if (!task) {
+        res.statusCode = 404;
+        return res.end(JSON.stringify({ message: 'Tarefa não encontrada' }));
+    }
+
+    res.end(JSON.stringify(task));
+};
+
+
 // Deletar tarefa
 const deleteTask = (req, res, id) => {
     const success = taskService.deleteTask(id);
@@ -85,5 +97,6 @@ module.exports = {
     listTasks,
     completeTask,
     updateTask,
-    deleteTask
+    deleteTask,
+    buscarTask
 };

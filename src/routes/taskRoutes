@@ -5,6 +5,12 @@ module.exports = (req, res) => {
     const url = req.url;
     const method = req.method;
 
+    
+    if (url.startsWith('/tasks/') && method === 'GET') {
+        const id = url.split('/')[2];
+        return taskController.buscarTask(req, res, id);
+    }
+
     // GET /tasks
     if (url === '/tasks' && method === 'GET') {
         return taskController.listTasks(req, res);
@@ -15,7 +21,7 @@ module.exports = (req, res) => {
         return taskController.createTask(req, res);
     }
 
-    // PUT /tasks/:id
+    // PUT /tasks/:id/status
     if (url.startsWith('/tasks/') && method === 'PUT') {
         const id = url.split('/')[2];
         const status = url.split('/')[3];
@@ -28,6 +34,7 @@ module.exports = (req, res) => {
 
     }
 
+    
     // DELETE /tasks/:id
     if (url.startsWith('/tasks/') && method === 'DELETE') {
         const id = url.split('/')[2];

@@ -30,6 +30,13 @@ const completeTask = (id, status) => {
     return task;
 }
 
+const buscarTask = (id) => {
+    const task = tasks.find((t) => t.id == id);
+    if (!task) return null;
+
+    return task;
+}
+
 // Deletar
 const deleteTask = (id) => {
     const index = tasks.findIndex(t => t.id == id);
@@ -45,4 +52,6 @@ module.exports = {
     updateTask,
     deleteTask,
     completeTask,
+    buscarTask,
+
 };
