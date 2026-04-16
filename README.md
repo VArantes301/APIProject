@@ -3,7 +3,9 @@
 API REST para criação e gerenciamento de tarefas, construída com **Node.js puro**, sem o uso de frameworks externos como Express.
 
 **Autor:** Vincentt Arantes  
-**Turma:** 2 DS AMS — Campinas, São Paulo  
+**Turma:** 2 DS AMS — Campinas, São Paulo 
+
+**Link do video:** https://youtu.be/ZDsF4jgkRXo
 
 ---
 
